@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "changed the tags"
+    Name = "tf-cloud-tags"
   }
 }
 
