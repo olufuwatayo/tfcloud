@@ -23,7 +23,11 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "nginx-web"
+    Name = "tf-cloud-tags"
   }
 }
 
+resource "aws_s3_bucket" "tobi_bucket" {
+  name = "tobi-bucket-for-tf-cloud"
+  
+}
