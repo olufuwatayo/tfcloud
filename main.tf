@@ -28,6 +28,6 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_s3_bucket" "tobi_bucket" {
-  name = "tobi-bucket-for-tf-cloud"
+  bucket = "tobi-bucket-for-tf-cloud"
   
 }
