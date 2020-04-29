@@ -23,7 +23,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "nginx-web-wrong-name"
+    Name = "Hey-HR-Please-Increase-My-Salary"
   }
 }
 
