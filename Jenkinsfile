@@ -16,15 +16,18 @@ node {
 
    stage 'test'
         parallel (
-            phase1: { sh "echo p1; sleep 20s; echo phase1" },
-            phase2: { sh "echo p2; sleep 40s; echo phase2" }
+            phase1: { sh "echo p1; sleep 20s; echo phase1" }
         )
    stage name: 'init', concurrency: 1
         sh "terraform init"
 
 
    stage name: 'plan', concurrency: 1
-        sh "terraform plan --out plan"
+               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2	') {
+              sh "terraform plan --out plan"
+             
+            }
+        
 
    stage name: 'deploy', concurrency: 1
         def deploy_validation = input(
@@ -34,3 +37,5 @@ node {
 
         sh "terraform apply plan"
 }
+
+
