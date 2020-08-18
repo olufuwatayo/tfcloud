@@ -16,7 +16,7 @@ node {
 
    stage 'test'
         parallel (
-            phase1: { sh "echo p1; sleep 20s; echo phase1" }
+            phase1: { sh "echo p1; sleep 5s; echo phase1" }
         )
    stage name: 'init', concurrency: 1
         sh "terraform init"
@@ -34,8 +34,11 @@ node {
             id: 'Deploy',
             message: 'Let\'s continue the deploy plan',
             type: "boolean")
-
-        sh "terraform apply plan"
+               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2	') {
+               sh "terraform apply plan"
+             
+            }
+       
 }
 
 
