@@ -23,7 +23,7 @@ node {
 
 
    stage name: 'plan', concurrency: 1
-               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2	') {
+               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2') {
               sh "terraform plan --out plan"
              
             }
@@ -34,7 +34,7 @@ node {
             id: 'Deploy',
             message: 'Let\'s continue the deploy plan',
             type: "boolean")
-               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2	') {
+               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2') {
                sh "terraform apply plan"
              
             }
