@@ -34,7 +34,7 @@ node {
             id: 'Deploy',
             message: 'Let\'s continue the deploy plan',
             type: "boolean")
-               withAWS(credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2') {
+               withAWS(region:'us-east-1' credentials:'d54f3272-9873-4d94-a3ff-fafbd72fbbd2') {
                sh "terraform apply plan"
              
             }
