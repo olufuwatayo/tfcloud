@@ -32,6 +32,6 @@ phases:
     commands:
       - terraform plan
 
-  post_build:
-    commands:
-      - echo terraform $TF_COMMAND completed on `date`
+  # post_build:
+  #   commands:
+  #     - echo terraform $TF_COMMAND completed on `date`
